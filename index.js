@@ -65,6 +65,15 @@ app.post("/user_register", (req, res) => {
         isAdmin = 0;
         isPermitted = 1;
     }
+    let gender = 0;
+    const gender2 = req.body.gender;
+    if(gender === "male"){
+        gender = "M";
+    } else if (gender === "female"){
+        gender = "F";
+    } else {
+        gender = "RNS";
+    }
     bcrypt.hash(password.toString(), salt, (err,hash) => {
         if (err){
             console.log(err);
@@ -73,7 +82,7 @@ app.post("/user_register", (req, res) => {
             req.body.user,
             hash,
             req.body.full_name,
-            req.body.gender,
+            gender,
             req.body.birth_day,
             req.body.pos,
             req.body.lic,

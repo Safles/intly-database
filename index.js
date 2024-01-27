@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const cors = require('cors');
 const app = express();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const salt = 10;
 
 app.use(cors());

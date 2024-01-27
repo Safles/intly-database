@@ -11,16 +11,16 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended : true} ));
 
 // Connection Checker
-app.listen(3001, () => {
+app.listen(3306, () => {
     console.log('Running on port 3001');
 });
 
 // Database Access
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "intly_database"
+    host: "banytq1lkjlmiestfaif-mysql.services.clever-cloud.com",
+    user: "ufw1qnkibpjki0fw",
+    password: "zBl22uBEaH3WuaJzwBiD",
+    database: "banytq1lkjlmiestfaif"
 });
 db.connect((err)=>{
     if(err){
